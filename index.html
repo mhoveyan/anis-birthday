@@ -16,10 +16,10 @@ input[type=text],textarea{width:100%;background:var(--field);border:var(--bw) so
 textarea{min-height:84px;resize:vertical}
 fieldset{border:0;padding:0;margin:0;min-width:0}
 form{display:flex;flex-direction:column;gap:16px;margin-top:18px}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.choice{position:relative}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:10px}
+.choice{position:relative;display:flex}
 .choice input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
-.choice span{display:block;text-align:center;padding:14px 8px;border:var(--bw) solid var(--ink);border-radius:var(--r);font-weight:700;background:var(--field);transition:background .15s}
+.choice span{display:flex;align-items:center;justify-content:center;flex:1;box-sizing:border-box;min-height:58px;text-align:center;line-height:1.15;padding:12px 8px;border:var(--bw) solid var(--ink);border-radius:var(--r);font-weight:700;background:var(--field);transition:background .15s}
 .choice input:checked+span{background:var(--pop);color:var(--onpop)}
 input:focus-visible,textarea:focus-visible,button:focus-visible,.choice input:focus-visible+span,a:focus-visible{outline:3px solid var(--pop);outline-offset:2px}
 .go{background:var(--ink);color:var(--paper);border:0;padding:16px;font:700 14px var(--body);letter-spacing:.14em;text-transform:uppercase;border-radius:var(--r);cursor:pointer}
@@ -79,6 +79,7 @@ h2{font-family:var(--display);font-weight:400;font-style:italic;font-size:36px;m
 .eyebrow.sm{text-align:center;margin-top:8px}
 .l{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--pop);display:block;margin-bottom:6px;font-weight:400}
 .choice span{font-family:var(--display);font-style:italic;font-weight:400;font-size:19px}
+@media (max-width:400px){.choice span{font-size:17px;padding:10px 6px}}
 .big{font-family:var(--display);font-style:italic;font-size:42px;margin:0 0 8px;font-weight:400}
 .go.alt{background:transparent;color:var(--pop);border:1px solid var(--pop)}
 .go{display:block;text-align:center;text-decoration:none;border-radius:99px;font-weight:600;letter-spacing:.26em;font-size:12px;background:var(--pop);color:var(--onpop)}
